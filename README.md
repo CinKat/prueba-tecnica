@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Proyecto de Prueba Tecnica: Lista de Noticias
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologías Utilizadas
 
-## Available Scripts
+**React**: Utilice React como la librería principal para el desarrollo de la interfaz de usuario.
 
-In the project directory, you can run:
+**TypeScript**: TypeScript se empleó para mejorar la integridad y legibilidad del código.
 
-### `npm start`
+**SCSS (con BEM)**: Utilizamos SCSS siguiendo la metodología BEM (Block, Element, Modifier) para estilos más organizados y mantenibles.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Pasos para Ejecutar el Proyecto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clona el repositorio utilizando el comando:
+``git clone git@github.com:CinKat/prueba-tecnica.git``
 
-### `npm test`
+Instala las dependencias con:
+``npm install``
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para correr la aplicación, utiliza el comando:
+``npm start``
 
-### `npm run build`
+Esto iniciará la aplicación en tu navegador predeterminado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estructura del Proyecto
+src/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+components/: Contiene los componentes de React.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+helper/: Contiene las funciones, en este caso la que realiza la petición a la API
 
-### `npm run eject`
+styles/: Aquí se encuentran los archivos de estilos, utilizamos SCSS siguiendo la metodología BEM para una mejor organización.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+App.tsx: Punto de entrada principal de la aplicación.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+API Utilizada
+Utilizamos la API proporcionada para obtener datos de noticias: https://api.jsonbin.io/v3/b/63654b012b3499323bf58225
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
