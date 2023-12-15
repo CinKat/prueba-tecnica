@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="Titulo"> <span className="Titulo--subrayado">Últimas</span> Noticias</h1>
-      <ListaNoticias/>
+      <ListaNoticias limiteInicial={5}/>
     </div>
   );
 }

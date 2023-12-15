@@ -11,6 +11,10 @@ interface Noticia {
   type: string
 }
 
+interface ListaNoticiasProps {
+  limiteInicial: number;
+}
+
 const classes = {
   title:          'noticias__titulo',
   contenedor:     'contenedor_lista',
@@ -18,8 +22,8 @@ const classes = {
   difuminado:     'difuminarTop',
 }
 
-const ListaNoticias = () => {
-  const [mostrarTodo, setMostrarTodo] = useState(false);
+const ListaNoticias: React.FC<ListaNoticiasProps> = ({ limiteInicial }) => {
+  const [mostrarTodo, setMostrarTodo] = useState<boolean>(false);
   const [noticias, setNoticias] = useState<Noticia[]>([]);
   const [noticiasAMostrar, setNoticiasAMostrar] = useState<Noticia[]>([]);
 
@@ -29,20 +33,20 @@ const ListaNoticias = () => {
       try {
         const notas = await fetchData();
         setNoticias(notas.notes)
-        setNoticiasAMostrar(notas.notes.slice(0, 5));
+        setNoticiasAMostrar(notas.notes.slice(0, limiteInicial));
       } catch (error) {
         console.error('Error al obtener datos:', error);
       }
     };
 
     obtenerDatos();
-  }, []);
+  }, [limiteInicial]);
 
   const toggleMostrarNoticias = () => {
-    setNoticiasAMostrar(mostrarTodo ? noticiasAMostrar.slice(0, 5) : noticias);
+    const nuevoLimite = mostrarTodo ? limiteInicial : noticias.length;
+    setNoticiasAMostrar(mostrarTodo ? noticiasAMostrar.slice(0, nuevoLimite) : noticias);
     setMostrarTodo(!mostrarTodo);
   };
-
 
   return (
     <>
