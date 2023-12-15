@@ -1,0 +1,27 @@
+@import '../variables/colors';
+
+.contenedor_lista {
+  margin-left: 22px;
+}
+
+.noticias {
+  &__titulo {
+    font-size: 20px;
+    padding: 10px 0;
+    font-weight: bold;
+  }   
+}
+
+.button {
+  text-transform: uppercase;
+  border: none;
+  padding-top: 40px;
+  background: transparent;
+  display: block;
+  margin: auto;
+  color: $blue;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+  
