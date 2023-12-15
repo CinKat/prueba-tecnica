@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from "../helpers/getNoticias"
 
+// Definición de la interfaz para una noticia
 interface Noticia {
   id: string
   date: string
@@ -11,10 +12,12 @@ interface Noticia {
   type: string
 }
 
+// Definicion de la interface para el prop limiteInicial
 interface ListaNoticiasProps {
   limiteInicial: number;
 }
 
+// Objeto para almacenar nombres de los estilos 
 const classes = {
   title:          'noticias__titulo',
   contenedor:     'contenedor_lista',
@@ -29,6 +32,7 @@ const ListaNoticias: React.FC<ListaNoticiasProps> = ({ limiteInicial }) => {
 
 
   useEffect(() => {
+    // Función asincrónica para obtener datos del fetchData
     const obtenerDatos = async () => {
       try {
         const notas = await fetchData();
@@ -42,6 +46,7 @@ const ListaNoticias: React.FC<ListaNoticiasProps> = ({ limiteInicial }) => {
     obtenerDatos();
   }, [limiteInicial]);
 
+  //Esta función toggle cambia entre mostrar todas las noticias y mostrar un límite inicial.
   const toggleMostrarNoticias = () => {
     const nuevoLimite = mostrarTodo ? limiteInicial : noticias.length;
     setNoticiasAMostrar(mostrarTodo ? noticiasAMostrar.slice(0, nuevoLimite) : noticias);
